@@ -1,0 +1,19 @@
+# run image
+docker run  microservices/search-rest-api:1.0.0.RELEASE
+
+# run image (expose port)
+docker run -p 8000:8000 microservices/search-rest-api:1.0.0.RELEASE
+
+# run image (run container in detached mode)
+docker run -p 8000:8000 -d microservices/search-rest-api:1.0.0.RELEASE
+
+# check container logs
+docker logs <image_id>
+
+# tail container logs
+docker logs -f <image_id>
+
+
+
+
+

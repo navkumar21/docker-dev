@@ -1,0 +1,14 @@
+# install docker
+sudo yum install -y docker
+
+#Add the ec2-user to the docker group so you can execute Docker commands without using sudo.
+sudo usermod -a -G docker ec2-user
+
+#check the version
+docker --version
+
+#start the docker
+sudo service docker start
+
+
+

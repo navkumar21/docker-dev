@@ -1,0 +1,10 @@
+# show all running containers
+docker container ls
+
+# show all containers (running and stopped)
+docker container ls -a
+
+# stop docker container
+docker container stop id
+
+

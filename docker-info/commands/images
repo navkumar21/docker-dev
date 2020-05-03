@@ -1,0 +1,22 @@
+# show all images
+docker images
+
+# check history of the image
+docker history <image_name>/<image_id>
+
+# image details
+docker image inspect <image_id>
+
+# remove docker image
+docker image remove <image_id>
+
+# force remove docker image
+docker rmi -f  <image_id>
+
+# search image
+docker search <image_name>
+
+# add tag to image
+docker tag microservices/search-rest-api:1.0.0.RELEASE microservices/search-rest-api:latest
+
+
