@@ -1,0 +1,6 @@
+docker run -dit openjdk:8-jdk-alpine
+docker container cp target/rest-api.jar <container_name>:/tmp
+docker container exec <container_name> ls /tmp
+docker container commit <container_name> navdev/rest-api.jar:manual
+docker container commit --change='["java","-jar","/tmp/rest-api.jat"]' <container_name> navdev/rest-api.jar:manual
+docker run -p 8080:8080 navdev/rest-api.jar:manual

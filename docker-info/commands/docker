@@ -1,0 +1,24 @@
+# to see what events are happening in docker environment
+docker events
+
+# to check top process running in docker container
+docker top <container_id>
+
+# check running containers stats
+docker stats
+
+# run container with specific memory and cpu
+docker run -p 8000:8000 -d -m 512m --cpu-quota 10000 microservices/search-rest-api:1.0.0.RELEASE
+
+# to check all the details which managed by docker daemon
+docker system df
+
+
+
+
+
+
+
+
+
+

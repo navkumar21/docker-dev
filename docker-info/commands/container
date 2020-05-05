@@ -4,7 +4,58 @@ docker container ls
 # show all containers (running and stopped)
 docker container ls -a
 
+# run container
+docker run  microservices/search-rest-api:1.0.0.RELEASE
+
+# run container (expose port)
+docker run -p 8000:8000 microservices/search-rest-api:1.0.0.RELEASE
+
+# run container (run container in detached mode)
+docker run -p 8000:8000 -d microservices/search-rest-api:1.0.0.RELEASE
+
+# stop docker container gracefully
+docker container stop <container_id>
+
 # stop docker container
-docker container stop id
+docker container kill <container_id>
+
+# stop => SIGTERM  ( graceful shutdown )
+# kill => SIGKILL  ( immediately terminates the process )
+
+# check container logs
+docker logs <container_id>
+
+# tail container logs
+docker logs -f <container_id>
+
+# pause the docker container
+docker container pause <container_id>
+
+# pause the docker container
+docker container unpause <container_id>
+
+# container inspect
+docker containers inspect <image_id>
+
+# to remove all stopped containers
+docker container prune
+
+# run container (run container in restart always mode - when docker daemon starts container will start )
+docker run -p 8000:8000 -d --restart=always microservices/search-rest-api:1.0.0.RELEASE
+
+# run container in detached interactive mode (it allows us to run commands against a running container)
+docker run -dit <image_name>
+
+docker run -dit openjdk:8-jdk-alpine
+docker container cp target/rest-api.jar <container_name>:/tmp
+docker container exec <container_name> ls /tmp
+docker container commit <container_name> navdev/rest-api.jar:manual
+docker container commit --change='["java","-jar","/tmp/rest-api.jat"]' <container_name> navdev/rest-api.jar:manual
+docker run -p 8080:8080 navdev/rest-api.jar:manual
+
+
+
+
+
 
 
